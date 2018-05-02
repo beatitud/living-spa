@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
 
-export interface IAppSettings {
-  getReadingsBaseUrl(): string;
-}
-
 @Injectable()
 export class AppSettings {
 
   private readonly settings = Object.freeze({
-    readingsBaseUrl: '',
+    readingsBaseUrl: 'https://d1txa02zd2vy48.cloudfront.net/readings/ewtn',
   });
 
-  constructor() {}
-
-  get getReadingsBaseUrl(): string {
+  get getReferencesBaseUrl(): string {
     return this.settings.readingsBaseUrl;
   }
 }

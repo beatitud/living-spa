@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppSettings } from '../tools/AppSettings';
 import { ReadingsService } from './readings.service';
+import {isSuccessful} from '../tools/OperationResult';
 
 @Component({
   selector: 'app-readings',
@@ -10,11 +10,17 @@ import { ReadingsService } from './readings.service';
 })
 export class ReadingsComponent implements OnInit {
 
+  private readings: any[] = [];
+
   constructor(private readonly readingsService: ReadingsService) {
-    readingsService.getReferences().then(console.log);
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const result = await this.readingsService.getReferences(); // .then(console.log);
+    if (isSuccessful(result)) {
+      this.readings = result.value.readings;
+      return;
+    }
   }
 
 }

@@ -1,3 +1,6 @@
-<p>
-  readings works!
-</p>
+
+
+<div *ngFor="let reading of readings;">
+  <h3>{{reading.reference}}</h3>
+  <p [innerHTML]="reading.text"></p>
+</div>

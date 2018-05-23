@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class AppSettings {
 
   private readonly settings = Object.freeze({
-    readingsBaseUrl: 'https://d1txa02zd2vy48.cloudfront.net/readings/ewtn',
+    readingsBaseUrl: 'https://d1txa02zd2vy48.cloudfront.net/readings/scraped',
   });
 
   get getReferencesBaseUrl(): string {

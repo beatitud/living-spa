@@ -1,6 +1,6 @@
 
 
 <div *ngFor="let reading of readings;">
-  <h3>{{reading.reference}}</h3>
-  <p [innerHTML]="reading.text"></p>
+  <h3>{{reading.type}} ({{reading.reference}})</h3>
+  <p class="reading {{reading.type.toLowerCase()}}" [innerHTML]="reading.text"></p>
 </div>

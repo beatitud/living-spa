@@ -5,10 +5,10 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { AppSettings } from './tools/AppSettings';
 import { HttpClientModule } from '@angular/common/http';
 import {Router, RouterModule, Routes} from '@angular/router';
-import {MatDialog, MatDialogModule} from '@angular/material';
 import {ReadingsModule} from './readings/readings.module';
-import { VersionsComponent } from './versions/versions.component';
 import {VersionsModule} from './versions/versions.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '',
@@ -29,6 +29,8 @@ const appRoutes: Routes = [
     VersionsModule,
     ReadingsModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     NoopAnimationsModule,
     RouterModule.forRoot(appRoutes, {
       enableTracing: true, // <-- debugging purposes only

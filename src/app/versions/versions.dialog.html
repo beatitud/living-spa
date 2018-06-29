@@ -1,4 +1,5 @@
 <h2 mat-dialog-title>Versions</h2>
+
 <mat-dialog-content>
   <mat-select placeholder="Version" [formControl]="versionsControl">
     <mat-option>-- None --</mat-option>
@@ -9,17 +10,6 @@
     </mat-optgroup>
   </mat-select>
 </mat-dialog-content>
-<!--
-<mat-dialog-content [formGroup]="form">
-
-    <mat-form-field>
-        <input matInput
-                placeholder="Course Description"
-               formControlName="description">
-    </mat-form-field>
-
-</mat-dialog-content>
--->
 
 <mat-dialog-actions>
   <button class="mat-raised-button mat-primary" (click)="ok()">OK</button>

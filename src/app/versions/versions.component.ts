@@ -2,6 +2,7 @@ import { MatDialogConfig } from '@angular/material';
 import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-versions,[versions]',
@@ -13,17 +14,8 @@ export class VersionsComponent {
   constructor(public readonly dialog: MatDialog) { }
 
   openDialog() {
-    // const dialogRef = this.dialog.open(VersionsDialogComponent, {
-    //   width: '250px',
-    //   data: { name: 'Bob', animal: 'Dog' }
-    // });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    // });
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '30em';
-    // dialogConfig.position = { 'top': '0.5em', };
     dialogConfig.autoFocus = true;
 
     this.dialog.open(VersionsDialogComponent, dialogConfig);
@@ -69,12 +61,15 @@ export class VersionsDialogComponent implements OnInit {
   description = 'Hi';
 
   constructor(public readonly dialogRef: MatDialogRef<VersionsDialogComponent>,
+              private readonly router: Router,
               @Inject(MAT_DIALOG_DATA) public readonly data: any) { }
 
     ngOnInit(): void {
     }
 
   ok(): void {
+    // debugger;
+    this.router.navigate([`/readings/${this.versionsControl.value.toLowerCase()}`]);
     this.dialogRef.close();
   }
 }

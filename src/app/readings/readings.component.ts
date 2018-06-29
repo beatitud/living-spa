@@ -3,7 +3,6 @@ import { ReadingsService } from './readings.service';
 import {isSuccessful} from '../tools/OperationResult';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {filter, map, switchMap} from 'rxjs/operators';
-import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-readings',

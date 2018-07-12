@@ -34,12 +34,12 @@ export class ReadingsService {
   ];
 
   constructor(private readonly appSettings: AppSettings,
-              private readonly httpClient: HttpClient) {
-  }
+              private readonly httpClient: HttpClient) { }
 
   public async getReferences(date = utc().format(DATE_FORMAT),
-                             version = 'NRSVCE'): Promise<IOperationResult<any>>  {
-    const url = `${this.appSettings.getReferencesBaseUrl}/${date}/${version}/data.json`;
+                             version = AppSettings.DEFAULT_VERSION,
+                             location = AppSettings.DEFAULT_LOCATION): Promise<IOperationResult<any>>  {
+    const url = `${this.appSettings.referencesBaseUrl}/${date}/${version.toUpperCase()}/data.json`;
     const result = await this.httpClient.get(url)
                                         .toPromise()
                                         .then(success)

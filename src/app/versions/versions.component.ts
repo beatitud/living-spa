@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppSettings } from '../tools/AppSettings';
 
 @Component({
   selector: 'app-versions,[versions]',
@@ -58,7 +59,6 @@ export class VersionsDialogComponent implements OnInit {
       {key: 'RUSV', title: 'Russian Synodal Version'},
     ]},
   ];
-  description = 'Hi';
 
   constructor(public readonly dialogRef: MatDialogRef<VersionsDialogComponent>,
               private readonly router: Router,
@@ -69,7 +69,9 @@ export class VersionsDialogComponent implements OnInit {
 
   ok(): void {
     // debugger;
-    this.router.navigate([`/readings/${this.versionsControl.value.toLowerCase()}`]);
+    const location = AppSettings.DEFAULT_LOCATION;
+    const version = this.versionsControl.value.toLowerCase();
+    this.router.navigate([`/readings/${location}/${version}`]);
     this.dialogRef.close();
   }
 }

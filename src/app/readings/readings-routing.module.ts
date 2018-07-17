@@ -5,7 +5,7 @@ import {ReadingsComponent} from './readings.component';
 import { AppSettings } from '../tools/AppSettings';
 
 const settings = new AppSettings();
-const location = settings.readingLocation || AppSettings.DEFAULT_LOCATION;
+const location = settings.readingCalendar || AppSettings.DEFAULT_CALENDAR;
 const date = settings.readingDate || moment.utc().format('YYYY-MM-DD');
 const version = settings.readingVersion || AppSettings.DEFAULT_VERSION;
 

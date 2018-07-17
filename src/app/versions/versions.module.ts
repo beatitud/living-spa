@@ -1,9 +1,10 @@
 import {MatDialogModule} from '@angular/material/dialog';
 import {NgModule} from '@angular/core';
-import {VersionsComponent, VersionsDialogComponent} from './versions.component';
+import {VersionsComponent} from './versions.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { VersionsDialogComponent } from './versions.dialog';
 
 @NgModule({
   imports: [

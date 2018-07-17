@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AppSettings {
 
-  public static readonly DEFAULT_LOCATION = 'usa';
+  public static readonly DEFAULT_CALENDAR = 'usa';
   public static readonly DEFAULT_VERSION = 'NRSVCE';
 
   private static readonly DATE_KEY = 'living.gospel.router.date';
   private static readonly VERSION_KEY = 'living.gospel.router.version';
-  private static readonly LOCATION_KEY = 'living.gospel.router.location';
+  private static readonly CALENDAR_KEY = 'living.gospel.router.calendar';
 
   private readonly settings = Object.freeze({
     readingsBaseUrl: 'https://d1txa02zd2vy48.cloudfront.net/readings/scraped',
@@ -34,7 +34,7 @@ export class AppSettings {
     localStorage.setItem(AppSettings.VERSION_KEY, version);
   }
 
-  public set readingLocation(location: string) {
-    localStorage.setItem(AppSettings.LOCATION_KEY, location);
+  public set readingCalendar(location: string) {
+    localStorage.setItem(AppSettings.CALENDAR_KEY, location);
   }
 }

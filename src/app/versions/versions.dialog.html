@@ -1,16 +1,29 @@
 <h2 mat-dialog-title>Versions</h2>
 
 <mat-dialog-content>
-  <mat-select placeholder="Version" [formControl]="versionsControl">
-    <mat-option>-- None --</mat-option>
-    <mat-optgroup *ngFor="let group of versionsGroups" [label]="group.title" [disabled]="group.disabled">
-      <mat-option *ngFor="let version of group.versions" [value]="version.key">
-        {{version.title}}
-      </mat-option>
-    </mat-optgroup>
-  </mat-select>
+  <p class="dialog-field-container">
+    <mat-form-field>
+      <mat-select placeholder="Calendar" [formControl]="calendarsControl">
+        <!-- <mat-option>-- None --</mat-option> -->
+        <mat-option *ngFor="let calendar of calendars" [value]="calendar.key" [disabled]="calendar.disabled">
+          {{calendar.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p class="dialog-field-container">
+    <mat-form-field>
+      <mat-select placeholder="Version" [formControl]="versionsControl">
+        <!-- <mat-option>-- None --</mat-option> -->
+        <mat-optgroup *ngFor="let group of versionsGroups" [label]="group.title" [disabled]="group.disabled">
+          <mat-option *ngFor="let version of group.versions" [value]="version.key">
+            {{version.title}}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </p>
 </mat-dialog-content>
-
 <mat-dialog-actions>
   <button class="mat-raised-button mat-primary" (click)="ok()">OK</button>
 </mat-dialog-actions>

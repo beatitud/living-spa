@@ -51,7 +51,7 @@ export class ReadingsComponent implements OnInit {
   private saveSettings(x: Params) {
     this.appSettings.readingDate = x.originalDate;
     this.appSettings.readingVersion = x.version;
-    this.appSettings.readingLocation = x.location;
+    this.appSettings.readingCalendar = x.location;
     return x;
   }
 }
